@@ -29,5 +29,3 @@ Assert::same('', $method->getBody());
 $class = (new ClassType('Example'))
 	->setType('interface')
 	->addMember($method = new Nette\PhpGenerator\Method('getHandle'));
-
-Assert::null($method->getBody());
