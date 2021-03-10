@@ -33,10 +33,7 @@ final class Method
 	private bool $abstract = false;
 
 
-	/**
-	 * @param  string|array  $method
-	 */
-	public static function from($method): self
+	public static function from(string|array $method): static
 	{
 		return (new Factory)->fromMethodReflection(Nette\Utils\Callback::toReflection($method));
 	}
@@ -48,8 +45,7 @@ final class Method
 	}
 
 
-	/** @return static */
-	public function setStatic(bool $state = true): self
+	public function setStatic(bool $state = true): static
 	{
 		$this->static = $state;
 		return $this;
@@ -62,8 +58,7 @@ final class Method
 	}
 
 
-	/** @return static */
-	public function setFinal(bool $state = true): self
+	public function setFinal(bool $state = true): static
 	{
 		$this->final = $state;
 		return $this;
@@ -76,8 +71,7 @@ final class Method
 	}
 
 
-	/** @return static */
-	public function setAbstract(bool $state = true): self
+	public function setAbstract(bool $state = true): static
 	{
 		$this->abstract = $state;
 		return $this;
